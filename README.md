@@ -1,4 +1,4 @@
-# ERP.AERO API
+# REST API для управления файлами
 
 REST API сервис для управления файлами с JWT-авторизацией.
 
@@ -28,8 +28,8 @@ PORT=3000
 HOST=localhost
 
 DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=root
+DB_USER=test_usr
+DB_PASSWORD=AFUde1NLLCHG8dfB
 DB_NAME=test
 
 JWT_SECRET=your-super-secret-key-here
@@ -41,30 +41,20 @@ MAX_FILE_SIZE=100000000
 UPLOAD_PATH=uploads
 ```
 
-4. Запустите MySQL сервер используя Docker:
+4. Если у вас установлен Docker, вы можете запустить MySQL сервер, используя Docker Compose. Это также создаст базу данных и пользователя, используя файл `database.sql`:
 ```bash
 docker-compose up -d
 ```
 
-MySQL сервер будет доступен по адресу localhost:3306 со следующими параметрами:
-- База данных: test1
-- Пользователь: test1_usr
-- Пароль: AFUde1NLLCHG8dfB
+MySQL сервер будет доступен по адресу `localhost:3306`.
 
 Дополнительные команды для управления MySQL в Docker:
+
 - Просмотр логов: `docker-compose logs mysql`
 - Остановка: `docker-compose down`
 - Удаление данных: `docker-compose down -v`
 
-5. Обновите .env файл, указав параметры подключения к MySQL:
-```env
-DB_HOST=localhost
-DB_USER=test1_usr
-DB_PASSWORD=AFUde1NLLCHG8dfB
-DB_NAME=test1
-```
-
-6. Запустите сервер
+5. Запустите сервер:
 ```bash
 npm run dev
 ```

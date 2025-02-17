@@ -1,12 +1,11 @@
-version: '3.8'
 services:
   mysql:
     image: mysql:8
     ports:
       - "3306:3306"
     environment:
-      - MYSQL_DATABASE=test1
-      - MYSQL_USER=test1_usr
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=test_usr
       - MYSQL_PASSWORD=AFUde1NLLCHG8dfB
       - MYSQL_ROOT_PASSWORD=root
     volumes:

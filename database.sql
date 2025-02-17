@@ -1,8 +1,6 @@
--- Создание базы данных
-CREATE DATABASE IF NOT EXISTS test1;
-USE test1;
+CREATE DATABASE IF NOT EXISTS test;
+USE test;
 
--- Создание таблицы пользователей
 CREATE TABLE IF NOT EXISTS users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     identifier VARCHAR(255) NOT NULL UNIQUE,
@@ -14,7 +12,6 @@ CREATE TABLE IF NOT EXISTS users (
     )
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Создание таблицы файлов
 CREATE TABLE IF NOT EXISTS files (
     id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT NOT NULL,
@@ -42,7 +39,3 @@ CREATE INDEX idx_user_files ON files(user_id);
 CREATE INDEX idx_user_tokens ON tokens(user_id);
 CREATE INDEX idx_token_valid ON tokens(is_valid);
 CREATE INDEX idx_refresh_token ON tokens(refresh_token);
-
--- Добавление тестового пользователя (пароль: test123)
--- INSERT INTO users (identifier, password_hash) VALUES 
--- ('test@example.com', '$2b$10$6jM7G7XyYkZ7HQMX3vR1EOLn.Yf8/dqsXe4UOmzx.mx4vd.ACvJPi');
